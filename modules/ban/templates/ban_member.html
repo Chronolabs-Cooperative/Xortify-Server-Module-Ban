@@ -1,0 +1,22 @@
+<h1><{$display_name}></h1>
+<p align="justify"><{$display_text}></h1>
+<table class="table_profile" id="table_profile">
+    <thead class="head" id="header">
+        <td class="td_ip" id="td_ip">IP</td>
+        <td class="td_email" id="td_email">Email</td>
+		<td class="td_uname" id="td_uname">Username</td>
+		<td class="td_countrycode" id="td_countrycode">Country Code</td>
+        <td class="td_when" id="td_when">When Banned</td>
+    </thead>
+	<{foreach item=banned from=$latestbans}>
+    	<tr class="<{cycle value="odd,even"}>" id="td_item_<{cycle value="odd,even"}>">
+        	<td class="td_ip" id="td_ip"><a href="<{$php_self}>?op=member&id=<{$banned.id}>"><{$banned.ip}></a></td>
+            <td class="td_email" id="td_email"><a href="<{$php_self}>?op=member&id=<{$banned.id}>"><{$banned.email}></a></td>
+			<td class="td_uname" id="td_uname"><a href="<{$php_self}>?op=member&id=<{$banned.id}>"><{$banned.uname}></a></td>
+			<td class="td_countrycode" id="td_countrycode"><{$banned.countrycode}></td>
+            <td class="td_when" id="td_when"><{$banned.when}></td>
+        </tr>
+    <{/foreach}>
+</table>
+<a href="<{$xoops_url}>/modules/ban/backend.php"><img src="<{$xoops_url}>/modules/ban/images/rss.png" alt="Browse Ban Feed"/></a>
+

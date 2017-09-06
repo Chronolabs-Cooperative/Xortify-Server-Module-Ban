@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+p {
+	clear:both;
+	padding-bottom: 1em;
+	color:#663333;
+}
+
+
+h3 {
+	clear:both;
+	padding-bottom:0.8em;
+	padding-top:2.7em;
+	color:#FF6666;
+}
+
+#div_item {
+	font-size:12px;
+	display:block;
+	clear:both;
+}
+
+#div_ip {
+	float: left;	
+	width: 76px;
+}
+
+#div_netaddy {
+	padding-left: 10px;
+	float: left;	
+}
+
+#div_when {
+	padding-left: 10px;
+	float: right;	
+}
+
+#div_details {
+	font-size: 11px;
+	font-family: Franklin Gothic Book, Calibri, Bodoni MT, Arial Unicode MS, Verdana, Arial, Helvetica, sans-serif;
+	font-weight: 200;
+	color: #333399;
+	text-align: left;
+}
+
+#div_details.a {
+	color: #336666;
+}
+
+#div_member_display_image {
+	text-align:  center;
+}
+
+#div_ban_form {
+	clear: both;
+	text-align: center;
+}

@@ -1,0 +1,47 @@
+<h1 style="width: 529px !important;">Listed network ban for upto 3 months!</h1>
+<p align="justify" style="width: 529px !important;">The following details were provided to xortify.com from a client or business or government sentry, commenting will indicate intrusions detected in their sentry on the honey-pot!</h1>
+<table class="table_display" id="table_display" width="529px;" style="width: 529px !important;">
+	<{foreach item=row from=$ban}>        <{if is_array($row.value)}>         <tr class="<{cycle value="odd,even"}>" id="td_item_<{cycle value="odd,even"}>">        	<td class="td_name" id="td_name" style="width: 145px !important;"><{$row.title}>:</td>            <td class="td_value" id="td_value"><ul style="list-style: none;"><{foreach item=value key=what from=$row.value}><li><em><{$what}>:&nbsp;</em><{$value}></li><{/foreach}></ul></td>        </tr>  
+        <{else}>
+    	<tr class="<{cycle value="odd,even"}>" id="td_item_<{cycle value="odd,even"}>">
+        	<td class="td_name" id="td_name" style="width: 145px !important;"><{$row.title}>:</td>
+            <td class="td_value" id="td_value"><{$row.value}></td>
+        </tr> 		<{/if}>
+    <{/foreach}>
+    <tr>
+   		<td class="td_tags" id="td_tags" colspan="2"><{include file="db:tag_bar.html"}></td>
+   	</tr>
+</table>
+<{if $email_notices}>
+<h2 style="width: 529px !important;">Following Addresses Where Sent Abuse Notices</h2>
+<ul style="width: 529px !important; color: #121231; overflow: scroll;"><{foreach item=email from=$email_notices}><li><{$email}></li><{/foreach}></ul>
+<{/if}>
+<{if $ip_whois}>
+<h2 style="width: 529px !important;">IP Whois Data</h2>
+<pre style="width: 529px !important; color: #121231; overflow: scroll;">
+<{$ip_whois}>
+</pre>
+<{/if}>
+<{if $domain_whois}>
+<h2 style="width: 529px !important;">Domain Whois Data</h2>
+<pre style="width: 529px !important; color: #121231; overflow: scroll;">
+<{$domain_whois}>
+</pre>
+<{/if}>
+<br /><br />
+<div style="text-align: center; padding: 3px; margin: 3px; width: 529px !important;">
+  <{$commentsnav}>
+  <{$lang_notice}>
+</div> 
+<div style="margin: 3px; padding: 3px; width: 529px !important;">
+<!-- start comments loop -->
+<{if $comment_mode == "flat"}>
+  <{include file="db:system_comments_flat.html"}>
+<{elseif $comment_mode == "thread"}>
+  <{include file="db:system_comments_thread.html"}>
+<{elseif $comment_mode == "nest"}>
+  <{include file="db:system_comments_nest.html"}>
+<{/if}>
+<!-- end comments loop -->
+</div>
+
